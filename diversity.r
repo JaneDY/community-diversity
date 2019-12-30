@@ -13,8 +13,8 @@ data <- t(data)
 
 chao <- apply(data, 1, function(x) chao1(x))
 ace <- apply(data, 1, function(x) ACE(x))
-shannon <- diversity(data, index = "shannon")
-invsimpson <- diversity(data, index = "invsimpson")
+shannon <- diversity(data, index = "shannon", base = exp(1))
+invsimpson <- diversity(data, index = "invsimpson", base = exp(1))
 
 div <- rbind(chao,ace,shannon,invsimpson)
 write.table(div, paste0("alpha_div.",args[1]), sep="\t", row.names=T, col.names=NA, quote=F)
