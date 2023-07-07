@@ -1,7 +1,9 @@
+#!/usr/bin/env Rscript
+
 args <- commandArgs(trailingOnly=T)
 
-if(length(args)==0) {
-  print(paste0("Usage: ", args[0], "tax_profile.xls"))
+if(length(args)<2) {
+  print(paste0("Usage: ", args[0], "[tax_profile.xls/otu_table.xls] [a/b/ab]"))
   quit()
 }
 
